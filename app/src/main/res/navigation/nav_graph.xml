@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.bookrentalapp.ui.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.bookrentalapp.ui.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_bookListFragment"
+            app:destination="@id/bookListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookListFragment"
+        android:name="com.example.bookrentalapp.ui.list.BookListFragment"
+        android:label="BookListFragment" >
+        <action
+            android:id="@+id/action_bookListFragment_to_bookDetailFragment"
+            app:destination="@id/bookDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookDetailFragment"
+        android:name="com.example.bookrentalapp.ui.detail.BookDetailFragment"
+        android:label="BookDetailFragment" >
+        <action
+            android:id="@+id/action_bookDetailFragment_to_rentalFragment"
+            app:destination="@id/rentalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rentalFragment"
+        android:name="com.example.bookrentalapp.ui.rental.RentalFragment"
+        android:label="RentalFragment" >
+        <action
+            android:id="@+id/action_rentalFragment_to_completeFragment"
+            app:destination="@id/completeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/completeFragment"
+        android:name="com.example.bookrentalapp.ui.complete.CompleteFragment"
+        android:label="CompleteFragment" >
+        <argument
+            android:name="bookId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="applicantName"
+            app:argType="string"
+            android:defaultValue="미입력" />
+        <argument
+            android:name="studentId"
+            app:argType="string"
+            android:defaultValue="미입력" />
+        <argument
+            android:name="purpose"
+            app:argType="string"
+            android:defaultValue="미입력" />
+        <argument
+            android:name="rentalDays"
+            app:argType="integer"
+            android:defaultValue="1" />
+    </fragment>
+
+</navigation>
